@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
 import { FastifyPluginAsync, RequestGenericInterface } from 'fastify'
-import { UserData, UserDataType } from '../../domain/type/user.type'
+import { UserData, UserDataType } from '../../domain/model/user.type'
 
 interface UserRequest extends RequestGenericInterface {
   Querystring: {

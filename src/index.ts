@@ -10,12 +10,12 @@ const start = async () => {
 
     startContainer(env)
 
+    // todo: tentar remover o if
     if (env.development) {
       await server.listen(env.PORT)
     } else {
-      await server.listen(env.PORT, "0.0.0.0")
+      await server.listen(env.PORT, '0.0.0.0')
     }
-
   } catch (err) {
     server.log.error(err)
     process.exit(1)

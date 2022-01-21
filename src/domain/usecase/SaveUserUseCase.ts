@@ -1,6 +1,5 @@
 import { UserRepository } from '../../infrastructure/repository/user.repository'
-import { UserDataType } from '../type/user.type'
-
+import { UserDataType } from '../model/user.type'
 
 export class SaveUserUseCase {
   constructor(private readonly userRepository: UserRepository) {}

@@ -1,7 +1,7 @@
 import { asClass, asValue, AwilixContainer } from 'awilix'
 import { Cradle, diContainer } from 'fastify-awilix/lib/classic'
 import mongoose from 'mongoose'
-import { User, UserModel } from '../domain/model/user.model'
+import { User, UserModel } from '../domain/model/user.entity'
 import { FindUserUseCase } from '../domain/usecase/FindUserUseCase'
 import { ListUsersUseCase } from '../domain/usecase/ListUsersUseCase'
 import { SaveUserUseCase } from '../domain/usecase/SaveUserUseCase'
@@ -46,4 +46,3 @@ async function getMongoCollection<T>(
 export const startContainer = (env: Env): void => {
   defaultConfig(env, diContainer)
 }
-

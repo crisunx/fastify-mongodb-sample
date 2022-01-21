@@ -1,6 +1,6 @@
 import { Model } from 'mongoose'
-import { User } from '../../domain/model/user.model'
-import { UserDataType } from '../../domain/type/user.type'
+import { User } from '../../domain/model/user.entity'
+import { UserDataType } from '../../domain/model/user.type'
 
 export class UserRepository {
   constructor(private readonly userCollection: Promise<Model<User>>) {}

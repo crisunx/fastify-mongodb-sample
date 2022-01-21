@@ -1,8 +1,8 @@
 import { FastifyServerOptions } from 'fastify'
 import { PrettyOptions } from 'fastify/types/logger'
 import { LoggerOptions } from 'pino'
-import { v4 as uuid } from 'uuid'
 import { appConfig } from './app'
+import { nanoid } from 'nanoid'
 
 const config = appConfig()
 
@@ -37,7 +37,7 @@ export const serverOptions = (): CustomServerOptions => {
     genReqId: (req) => {
       const serverReqId = req.headers[xRequestId] as string | undefined
       if (serverReqId) return serverReqId
-      return uuid()
+      return nanoid()
     },
     logger,
   }

@@ -1,5 +1,5 @@
 import { UserRepository } from '../../infrastructure/repository/user.repository'
-import { User } from '../model/user.model'
+import { User } from '../model/user.entity'
 
 export class FindUserUseCase {
   constructor(private readonly userRepository: UserRepository) {}
