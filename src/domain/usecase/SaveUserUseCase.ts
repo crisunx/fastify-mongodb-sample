@@ -5,7 +5,7 @@ import { UserDataType } from '../type/user.type'
 export class SaveUserUseCase {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async save(user: UserDataType): Promise<UserDataType> {
+  async process(user: UserDataType): Promise<UserDataType> {
     const usr = this.userRepository.save(user)
 
     return usr

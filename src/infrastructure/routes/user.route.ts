@@ -14,7 +14,7 @@ const user: FastifyPluginAsync = async (fastify): Promise<void> => {
   const findUserUseCase = fastify.diContainer.cradle.findUserUseCase
 
   fastify.get('/user', async function (_request, reply) {
-    reply.send(await listUsersUseCase.findAll())
+    reply.send(await listUsersUseCase.process())
   })
 
   fastify.get<UserRequest>(
@@ -39,7 +39,7 @@ const user: FastifyPluginAsync = async (fastify): Promise<void> => {
     },
     async function (request, replay) {
       const { body: user } = request
-      replay.send(await saveUsersUseCase.save(user))
+      replay.send(await saveUsersUseCase.process(user))
     }
   )
 }

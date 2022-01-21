@@ -4,7 +4,7 @@ import { User } from '../model/user.model'
 export class ListUsersUseCase {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async findAll(): Promise<Array<User>> {
+  async process(): Promise<Array<User>> {
     return this.userRepository.findAll()
   }
 }
