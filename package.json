@@ -1,0 +1,47 @@
+{
+  "name": "node-clean-arch-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npm run build:ts && node dist/index.js",
+    "build:ts": "tsc",
+    "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"ts-node-dev src/index.ts --ignore-watch node_modules\"",
+    "start2": "node --loader ts-node/esm -r dotenv/config ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "^6.0.0",
+    "env-schema": "^3.5.1",
+    "fastify": "^3.25.2",
+    "fastify-autoload": "^3.3.1",
+    "fastify-awilix": "^1.2.0",
+    "fastify-cli": "^2.14.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.0",
+    "fastify-swagger": "^4.13.0",
+    "fastify-typebox": "^0.9.2",
+    "jest": "^27.4.5",
+    "json-schema-to-ts": "^1.6.4",
+    "mongoose": "^6.1.4",
+    "pino": "^7.6.3",
+    "pino-pretty": "^7.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^4.0.7",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^16.9.2",
+    "@types/pino": "^7.0.5",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.5.4"
+  }
+}
